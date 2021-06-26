@@ -1,0 +1,26 @@
+/*B) Realizar un método que reciba como parámetro un String y me devuelva un nuevo String con donde se hayan eliminado los espacios sobrantes: cuando hay dos o más caracteres consecutivos solo tiene que dejar uno.
+Public static  String quitarEspaciosRepetidos( String cadena)
+}
+Ejemplo:
+quitarEspaciosRepetidos ("   Hola    Manolo  García     .")-> " Hola Manolo García ."*/
+
+
+public static  String quitarEspaciosRepetidos( String cadena){
+        StringBuilder sb = new StringBuilder();
+        for (int i=0; i < cadena.length(); i++){
+            char letra = cadena.charAt(i);
+            if ( letra != ' '){
+                sb.append(letra);
+            }
+            // Si el anterior es un espacio no lo pongo
+            else { if ( i>0 && cadena.charAt(i-1) == ' ') {
+                    // me lo salto
+                } else {
+                    sb.append(letra);
+                }
+            }
+        }
+
+        return sb.toString();
+    }
+
